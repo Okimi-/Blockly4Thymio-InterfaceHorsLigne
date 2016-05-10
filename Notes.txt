@@ -1,0 +1,23 @@
+- Depuis Firefox, enregistrer la page http://blockly4thymio.net/environnement.html?exercice=10 sur le disque avec le nom Blockly4Thymio
+- Mettre dans le même répertoire que le fichier Blockly4Thymio.html, le dossier closure-library
+- Modifier le fichier Blockly4Thymio.html :
+	- Au début du fichier, changer la balise <title> avec : Blockly4Thymio, s'amuser à programmer
+
+	- A la fin du fichier, supprimer les scripts
+		 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		  ga('create', 'UA-67826157-1', 'auto');
+		  ga('send', 'pageview');
+
+	- Au milieu du fichier, rechercher : <div dir="LTR" style="width: 1688px; height: 752px;" id="blocklyDiv"> et supprimer tous le contenu et la balise <svg>
+
+	- A la fin du fichier, supprimer le contenu et la balise <div class="blocklyWidgetDiv">
+
+	- Rechercher <div id="idMenu"> et supprimer tout le contenu et la balise <a>
+
+	- Rechercher la balise <div id="idTitrePrincipal"><h1> et remplacer le titre par : Programme Thymio !
+
+	
+- Télécharger en FTP le répertoire /www/files/blockly4thymio vers /files

@@ -1,0 +1,132 @@
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(http://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+}
+
+html, body {
+	height: 100%;
+}
+body {
+	background-color: #89cfdc;
+	background-image: url( "bg.png" );
+	background-repeat: repeat;
+	margin: 0;
+}
+
+table {
+	border-width: 0px; 
+}
+tr {
+	border-width: 0px; 
+}
+td {
+	border-width: 0px;  
+}
+
+#idMenu {
+	width: 204px;
+	height: 114px;
+	line-height:114px;    /* centrage vertical des textes */ 
+}
+
+#idTitrePrincipal {
+	height: 114px;
+	line-height:114px;    /* centrage vertical des textes */
+	width: 100%;
+}
+
+#idColonneDeGauche {
+	width: 204px;
+	text-align:center; /* centrage horizontal */
+	padding-bottom: 20px;
+}	
+#idExercice {
+	background-color: #fff;
+	width: 180px;
+	vertical-align: middle;
+	display: inline-block;
+	border-radius: 7px;
+}
+#idIconeDeLExercice {
+	border-radius: 7px;
+	background-color: #3aafda;
+	width: 180px;
+	height: 140px;
+	line-height:140px;     /* centrage vertical des textes */ 
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+#idTexteDeLExercice {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+#idTexteDeLExercice p {
+	font-family: "Open Sans";
+	font-size: 12px;
+	color: #34495c;
+	margin: 10px;
+}
+#idTexteDeLExercice a {
+	font-family: "Open Sans";
+	font-size: 12px;
+	color: #34495c;
+}
+
+#idBoutonEnvoyerAThymio {
+}
+
+#saveButton {
+	width: 96px;
+	height: 96px;
+	border: 0;
+	cursor: pointer;
+	background: transparent;
+	background-image: url( "logo-sauver-96x96.png" );
+}
+#idChargerUnProgramme {
+	width: 64px;
+	height: 64px;
+	background: transparent;
+	background-image: url( "logo-charger.png" );
+	cursor: pointer;
+	border: 0px;
+}
+#loadButton {
+	width: 0px;
+	height: 0px;
+	visibility: hidden;
+}
+#idPiedDePage {
+	height: 80px;
+	float: right;
+	padding-right: 10px;
+}
+
+h1 {
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 300;
+	font-size: 60px;
+	color: #fff;
+	margin: 0px;
+	padding: 0px;
+}  
+h2 {
+	font-family: "Open Sans";
+	font-weight: normal;
+	font-size: 16px;
+	color: #34495c;
+	margin: 0px;
+	padding: 0px;
+}
+h3 {
+	font-family: "Open Sans";
+	font-weight: bold;
+	font-size: 12px;
+	color: #34495c;
+	margin: 0px;
+	padding: 0px;
+}
