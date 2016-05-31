@@ -4,3 +4,5 @@
 - Copier le menu <xml id="toolbox"></xml>
 - Modifier la version dans le texte de description
 - Télécharger en FTP le répertoire /www/files/blockly4thymio/icones vers /Blockly4Thymio/icones
+
+- Une fois le dossier préparé, copier son contenu dans le dossier de préparation du package setup-win/fichiers/interface-hors-ligne
