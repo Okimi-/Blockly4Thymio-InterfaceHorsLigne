@@ -1495,34 +1495,34 @@ padding: 0;
 <xml id="toolbox" style="display: none">
 <category name="Evénements">
    <block type="0_1b_Evénement_QuandLeProgrammeCommence"></block>
-   <block type="0_2_Evénement_QuandUnOrdreArriveDeLaTélécommandeIR"></block>
    <block type="0_2_Evénement_QuandUnBoutonFlècheEstAppuyé"></block>
-   <block type="0_4_Paramètre_CalibreLesMoteurs_SAIValeur"></block>
    <block type="0_5_Evénement_QuandUnCapteurAvantVoitUnObstacle"></block>
    <block type="0_5_Evénement_QuandUnCapteurArrièreVoitUnObstacle"></block>
+   <block type="0_2_Evénement_QuandUnOrdreArriveDeLaTélécommandeIR"></block>
+   <block type="0_4_Paramètre_CalibreLesMoteurs_SAIValeur"></block>
    <block type="0_5_Paramètre_LAdresseDeLaTélécommandeEst_SAIAdresse"></block>
 </category>
 <category name="Mouvements">
    <block type="0_1b_Mouvement_Avance"></block>
+   <block type="0_1b_Mouvement_Recule"></block>
    <block type="0_1b_Mouvement_Arrête"></block>
    <block type="0_1b_Mouvement_Avance_De5Centimètres"></block>
    <block type="0_1b_Mouvement_Avance_SELVitesse_SAIDistance"></block>
-   <block type="0_1b_Mouvement_Recule"></block>
    <block type="0_1b_Mouvement_Recule_SELVitesse_SAIDistance"></block>
+   <block type="0_5_Mouvement_TourneADroite"></block>
+   <block type="0_5_Mouvement_TourneAGauche"></block>
    <block type="0_1b_Mouvement_TourneADroite_SAIAngle"></block>
    <block type="0_1b_Mouvement_TourneAGauche_SAIAngle"></block>
    <block type="0_2_Mouvement_Tourne_SELSens_SAIAngle"></block>
-   <block type="0_5_Mouvement_TourneADroite"></block>
-   <block type="0_5_Mouvement_TourneAGauche"></block>
    <block type="0_6_Mouvement_VitesseDesRoues_SAIVitesseAGauche_SAIVitesseADroite"></block>
 </category>
 <category name="Lumières">
-   <block type="0_1b_Lumières_AllumeToutesLesLEDsPendant1Seconde_SELCouleur"></block>
    <block type="0_1b_Lumières_AllumeToutesLesLEDs_SELCouleur"></block>
    <block type="0_1b_Lumières_AllumeLesLEDs_SELLED_SELCouleur"></block>
-   <block type="0_1b_Lumières_EteinsToutesLesLEDsPendant1Seconde"></block>
+   <block type="0_1b_Lumières_AllumeToutesLesLEDsPendant1Seconde_SELCouleur"></block>
    <block type="0_2_Lumières_AllumeLesLEDs_SELLED_SELCouleur_SAIDurée"></block>
    <block type="0_6_Lumières_EteinsToutesLesLEDs"></block>
+   <block type="0_1b_Lumières_EteinsToutesLesLEDsPendant1Seconde"></block>
 </category>
 <category name="Sons">
    <block type="0_1b_Sons_JoueLaNote_DO_Pendant05Seconde"></block>
@@ -1532,10 +1532,10 @@ padding: 0;
    <block type="0_1b_Sons_JoueLaNote_SOL_Pendant05Seconde"></block>
    <block type="0_1b_Sons_JoueLaNote_LA_Pendant05Seconde"></block>
    <block type="0_1b_Sons_JoueLaNote_SI_Pendant05Seconde"></block>
-   <block type="0_2_Sons_JoueUnSon_SELSon"></block>
    <block type="0_2_Sons_JoueUneNoteCroche_SELNote"></block>
    <block type="0_2_Sons_JoueUneNoteNoire_SELNote"></block>
    <block type="0_2_Sons_JoueUneNoteBlanche_SELNote"></block>
+   <block type="0_2_Sons_JoueUnSon_SELSon"></block>
    <block type="0_4_Sons_JoueUnSonPersonnel_SELSon"></block>
    <block type="0_4_Sons_EnregistreUnSon_Pendant04Seconde"></block>
    <block type="0_4_Sons_RelireLeSonEnregistré"></block>
@@ -1545,17 +1545,21 @@ padding: 0;
    <block type="0_2_Contrôles_Attends_SAIDurée"></block>
    <block type="0_1b_Contrôles_RépèteToutLeTemps"></block>
    <block type="0_1b_Contrôles_Répète_SAIBoucle"></block>
+   <block type="0_6_Contrôles_Faire_TantQue_ENTCondition"></block>
    <block type="0_2_Contrôles_Si_IlYAUnObstacleDevant_Alors"></block>
    <block type="0_2_Contrôles_Si_ENTCondition_Alors"></block>
+   <block type="0_6_Valeur_Booléen_OULogique_ENTBooleen_ENTBooleen"></block>
+   <block type="0_6_Valeur_Booléen_ETLogique_ENTBooleen_ENTBooleen"></block>
+   <block type="0_6_Valeur_Booléen_NONLogique_ENTBooleen"></block>
    <block type="0_6_Contrôles_ArrêteLeProgramme"></block>
    <block type="0_6_Contrôles_SortDeLaBoucleFaire"></block>
-   <block type="0_6_Contrôles_Faire_TantQue_ENTCondition"></block>
 </category>
 <category name="Valeurs">
    <block type="0_2_Valeur_Booléen_Bouton_FlècheAvant"></block>
    <block type="0_2_Valeur_Booléen_Bouton_FlècheArrière"></block>
    <block type="0_2_Valeur_Booléen_Bouton_FlècheADroite"></block>
    <block type="0_2_Valeur_Booléen_Bouton_FlècheAGauche"></block>
+   <block type="0_6_Valeur_Booléen_Bouton_AucuneFlèche"></block>
    <block type="0_2_Valeur_Booléen_Capteur_AvantGauche"></block>
    <block type="0_2_Valeur_Booléen_Capteur_AvantMilieuGauche"></block>
    <block type="0_2_Valeur_Booléen_Capteur_AvantMilieu"></block>
@@ -1568,10 +1572,6 @@ padding: 0;
    <block type="0_2_Valeur_Booléen_Capteur_DessousDroite_Blanc"></block>
    <block type="0_2_Valeur_Booléen_Capteur_DessousDroite_Noir"></block>
    <block type="0_5_Valeur_Booléen_BoutonDeLaTélécommandeEst_SELTouche"></block>
-   <block type="0_6_Valeur_Booléen_Bouton_AucuneFlèche"></block>
-   <block type="0_6_Valeur_Booléen_OULogique_ENTBooleen_ENTBooleen"></block>
-   <block type="0_6_Valeur_Booléen_ETLogique_ENTBooleen_ENTBooleen"></block>
-   <block type="0_6_Valeur_Booléen_NONLogique_ENTBooleen"></block>
 </category>
 </xml>
 	
@@ -1581,7 +1581,7 @@ padding: 0;
 			<td><div id="idMenu">
 				
 		  	</div></td>
-			<td colspan="3" style="width: 100%;"><div id="idTitrePrincipal"><h1>Amuse-toi à programmer Thymio !</h1></div></td>
+			<td colspan="3" style="width: 100%;"><div id="idTitrePrincipal"><h1>Amuse-toi avec Thymio !</h1></div></td>
 		</tr>
 
 		<tr id="idContenu">
