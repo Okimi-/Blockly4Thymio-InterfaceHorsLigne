@@ -349,7 +349,7 @@ padding: 0 !important;
 }
 .blocklyWidgetDiv .goog-option-selected .goog-menuitem-checkbox,
 .blocklyWidgetDiv .goog-option-selected .goog-menuitem-icon {
-background: url(http://www.blockly4thymio.net/google-blockly2-217c7d7/blockly/media/sprites.png) no-repeat -48px -16px !important;
+background: url(sprites.png) no-repeat -48px -16px !important;
 }
 .blocklyToolboxDiv {
 background-color: #ddd;
@@ -384,7 +384,7 @@ height: 0px;
 margin: 5px 0;
 }
 .blocklyTreeIcon {
-background-image: url(http://www.blockly4thymio.net/google-blockly2-217c7d7/blockly/media/sprites.png);
+background-image: url(sprites.png);
 height: 16px;
 vertical-align: middle;
 width: 16px;
