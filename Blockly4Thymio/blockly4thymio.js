@@ -1,4 +1,5 @@
 
+
 'use strict'; 
 
 goog.provide('Blockly.Blocks.thymio'); 
@@ -67,12 +68,24 @@ Blockly.Blocks['0_2_Evénement_QuandUnOrdreArriveDeLaTélécommandeIR'] = {
   } 
 }; 
 
+Blockly.Blocks['0_9_Evénement_QuandLeChronomètreATerminéDeCompter'] = { 
+  init: function() { 
+    this.setColour( '#ed5565' ); 
+    this.setTooltip( 'Le programme commence lorsque que le chronomètre à terminé de compter' ); 
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage( "blockly4thymio/icones/icone-chronomètre.png", 20, 20, "noire" ));
+    this.appendDummyInput().appendField( 'quand le chronomètre a terminé de compter' );
+    this.setNextStatement( true, "null" );
+    this.setInputsInline( true );
+  } 
+}; 
+
 Blockly.Blocks['0_4_Paramètre_CalibreLesMoteurs_SAIValeur'] = { 
   init: function() { 
     this.setColour( '#ed5565' ); 
     this.setTooltip( 'La valeur de calibration des moteurs permet d\'ajuster la distance d\'avance demandée avec la distance réellement observée. Cette instruction ne peux être utilisé qu\'une seule fois dans un programme.' ); 
     this.appendDummyInput()
-        .appendField( "Calibre les moteurs avec la valeur" )
+        .appendField( "calibre les moteurs avec la valeur" )
         .appendField( new Blockly.FieldTextInput("50"), "Valeur" );
     this.setInputsInline( true );
     this.setPreviousStatement( true );
@@ -85,8 +98,46 @@ Blockly.Blocks['0_5_Paramètre_LAdresseDeLaTélécommandeEst_SAIAdresse'] = {
     this.setColour( '#ed5565' ); 
     this.setTooltip( 'L\'adresse de la télécommande IR, permet de défnir quel canal de la télécommande est utilisé.' ); 
     this.appendDummyInput()
-        .appendField( "Définis l'adresse de la télécommande à" )
+        .appendField( "définis l'adresse de la télécommande à" )
         .appendField( new Blockly.FieldTextInput("0"), "Adresse" );
+    this.setInputsInline( true );
+    this.setPreviousStatement( true );
+    this.setNextStatement( true );
+  } 
+}; 
+
+Blockly.Blocks['0_9_Paramètre_InitialiseLeChronomètre_SAIValeur'] = { 
+  init: function() { 
+    this.setColour( '#ed5565' ); 
+    this.setTooltip( 'Initialise le chronomètre.' ); 
+    this.appendDummyInput()
+        .appendField( "initialise le chronomètre à " )
+        .appendField( new Blockly.FieldTextInput("1"), "Valeur" )
+        .appendField( "seconde(s)" );
+    this.setInputsInline( true );
+    this.setPreviousStatement( true );
+    this.setNextStatement( true );
+  } 
+}; 
+
+Blockly.Blocks['0_9_Evénement_DémarrerLeChronomètre'] = { 
+  init: function() { 
+    this.setColour( '#ed5565' ); 
+    this.setTooltip( 'Démarrer le chronomètre.' ); 
+    this.appendDummyInput()
+        .appendField( "démarrer le chronomètre" );
+    this.setInputsInline( true );
+    this.setPreviousStatement( true );
+    this.setNextStatement( true );
+  } 
+}; 
+
+Blockly.Blocks['0_9_Evénement_ArrêterLeChronomètre'] = { 
+  init: function() { 
+    this.setColour( '#ed5565' ); 
+    this.setTooltip( 'Arrêter le chronomètre.' ); 
+    this.appendDummyInput()
+        .appendField( "arrêter le chronomètre" );
     this.setInputsInline( true );
     this.setPreviousStatement( true );
     this.setNextStatement( true );
@@ -1078,12 +1129,21 @@ Blockly.Blocks['0_8_Valeur_AfficheLaValeur_ENTEntier'] = {
   } 
 }; 
 
+Blockly.Blocks['0_9_Valeur_Entier_Température'] = { 
+  init: function() { 
+    this.setColour( '#5d9cec' ); 
+    this.setTooltip( 'Valeur du capteur de température en degré Celsius.' ); 
+    this.appendDummyInput().appendField( "température en °C" );
+    this.setInputsInline( false );
+    this.setOutput( true, "Number" );
+  } 
+}; 
+
 Blockly.Blocks['0_8_Variables'] = { 
   init: function() { 
     this.setColour( '#8f3fb0' ); 
     this.setTooltip( '' ); 
     
   } 
-}; 
-
+};
 
