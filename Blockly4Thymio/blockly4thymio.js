@@ -1,5 +1,4 @@
 
-
 'use strict'; 
 
 goog.provide('Blockly.Blocks.thymio'); 
@@ -75,6 +74,30 @@ Blockly.Blocks['0_9_Evénement_QuandLeChronomètreATerminéDeCompter'] = {
     this.appendDummyInput()
       .appendField(new Blockly.FieldImage( "blockly4thymio/icones/icone-chronomètre.png", 20, 20, "noire" ));
     this.appendDummyInput().appendField( 'quand le chronomètre a terminé de compter' );
+    this.setNextStatement( true, "null" );
+    this.setInputsInline( true );
+  } 
+}; 
+
+Blockly.Blocks['1_0_Evénement_QuandUnChocEstDétecté'] = { 
+  init: function() { 
+    this.setColour( '#ed5565' ); 
+    this.setTooltip( 'Le programme commence lorsque qu\'un choc est détecté' ); 
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage( "blockly4thymio/icones/icone-evenement-quand-un-choc-est-detecte.png", 20, 20, "noire" ));
+    this.appendDummyInput().appendField( 'quand un choc est détecté' );
+    this.setNextStatement( true, "null" );
+    this.setInputsInline( true );
+  } 
+}; 
+
+Blockly.Blocks['1_0_Evénement_QuandUnSonEstDétecté'] = { 
+  init: function() { 
+    this.setColour( '#ed5565' ); 
+    this.setTooltip( 'Le programme commence lorsque qu\'un son est détecté' ); 
+    this.appendDummyInput()
+      .appendField(new Blockly.FieldImage( "blockly4thymio/icones/icone-evenement-quand-un-son-est-detecte.png", 20, 20, "noire" ));
+    this.appendDummyInput().appendField( 'quand un son est détecté' );
     this.setNextStatement( true, "null" );
     this.setInputsInline( true );
   } 
@@ -276,10 +299,10 @@ Blockly.Blocks['0_2_Mouvement_Tourne_SELSens_SAIAngle'] = {
     this.setTooltip( 'Thymio tourne, avec l\'angle que tu as saisie.' ); 
     this.appendDummyInput()
         .appendField( 'tourne à' )
-        .appendField(  new Blockly.FieldDropdown( [ [ "droite ↻", "A_DROITE" ],
-                            [ "gauche ↺", "A_GAUCHE"]]), "Sens" );
+        .appendField(  new Blockly.FieldDropdown(	[	[ "droite ↻", "A_DROITE" ],
+            								[ "gauche ↺", "A_GAUCHE"]]), "Sens" );
     this.appendDummyInput().appendField( 'de' );
-    this.appendDummyInput().appendField( new Blockly.FieldTextInput("90"), "Angle" );
+    this.appendDummyInput().appendField( new Blockly.FieldTextInput("0"), "Angle" );
     this.appendDummyInput().appendField( 'degré' );
     this.setInputsInline(true);
     this.setPreviousStatement( true, "null" );
@@ -470,8 +493,8 @@ Blockly.Blocks['0_2_Sons_JoueUnSon_SELSon'] = {
     this.appendDummyInput().appendField( 'joue le son' );
     this.appendDummyInput().appendField(
       new Blockly.FieldDropdown([ ["bonjour !",                 "SON_BONJOUR"],
-                                           ["ho !",                         "SON_HO"],
-                             ["quoi ?",                      "SON_QUOI"],
+       	                                   ["ho !",                         "SON_HO"],
+            			      	   ["quoi ?",                      "SON_QUOI"],
                                                ["je suis pas content !",  "SON_JE_SUIS_PAS_CONTENT"],
                                                ["sirène des pompiers",   "SON_SIRENE_DES_POMPIERS"]
                                                ]), "Son" );
@@ -489,19 +512,19 @@ Blockly.Blocks['0_2_Sons_JoueUneNoteCroche_SELNote'] = {
       .appendField(new Blockly.FieldImage( "blockly4thymio/icones/icone-note-croche.png", 20, 20, "croche" ));
     this.appendDummyInput().appendField(
       new Blockly.FieldDropdown([ ["Do₃", "DO3"],
-                                              ["Ré₃",  "RE3"],
-                                              ["Mi₃",  "MI3"],
-                                              ["Fa₃",  "FA3"],
-                                              ["Sol₃",  "SOL3"],
-                                              ["La₃",  "LA3"],
-                                              ["Si₃",  "SI3"],
-                                              ["Do₄",  "DO4"],
-                                              ["Ré₄",  "RE4"],
-                                              ["Mi₄",  "MI4"],
-                                              ["Fa₄",  "FA4"],
-                                              ["Sol₄",  "SOL4"],
-                                              ["La₄",  "LA4"],
-                                              ["Si₄",  "SI4"],
+       	                                      ["Ré₃",  "RE3"],
+       	                                      ["Mi₃",  "MI3"],
+       	                                      ["Fa₃",  "FA3"],
+       	                                      ["Sol₃",  "SOL3"],
+       	                                      ["La₃",  "LA3"],
+       	                                      ["Si₃",  "SI3"],
+       	                                      ["Do₄",  "DO4"],
+       	                                      ["Ré₄",  "RE4"],
+       	                                      ["Mi₄",  "MI4"],
+       	                                      ["Fa₄",  "FA4"],
+       	                                      ["Sol₄",  "SOL4"],
+       	                                      ["La₄",  "LA4"],
+       	                                      ["Si₄",  "SI4"],
                                                ]), "Note" );
     this.setInputsInline( true );
     this.setPreviousStatement( true, "null" );
@@ -517,19 +540,19 @@ Blockly.Blocks['0_2_Sons_JoueUneNoteNoire_SELNote'] = {
       .appendField(new Blockly.FieldImage( "blockly4thymio/icones/icone-note-noire.png", 20, 20, "noire" ));
     this.appendDummyInput().appendField(
       new Blockly.FieldDropdown([ ["Do₃", "DO3"],
-                                              ["Ré₃",  "RE3"],
-                                              ["Mi₃",  "MI3"],
-                                              ["Fa₃",  "FA3"],
-                                              ["Sol₃",  "SOL3"],
-                                              ["La₃",  "LA3"],
-                                              ["Si₃",  "SI3"],
-                                              ["Do₄",  "DO4"],
-                                              ["Ré₄",  "RE4"],
-                                              ["Mi₄",  "MI4"],
-                                              ["Fa₄",  "FA4"],
-                                              ["Sol₄",  "SOL4"],
-                                              ["La₄",  "LA4"],
-                                              ["Si₄",  "SI4"],
+       	                                      ["Ré₃",  "RE3"],
+       	                                      ["Mi₃",  "MI3"],
+       	                                      ["Fa₃",  "FA3"],
+       	                                      ["Sol₃",  "SOL3"],
+       	                                      ["La₃",  "LA3"],
+       	                                      ["Si₃",  "SI3"],
+       	                                      ["Do₄",  "DO4"],
+       	                                      ["Ré₄",  "RE4"],
+       	                                      ["Mi₄",  "MI4"],
+       	                                      ["Fa₄",  "FA4"],
+       	                                      ["Sol₄",  "SOL4"],
+       	                                      ["La₄",  "LA4"],
+       	                                      ["Si₄",  "SI4"],
                                                ]), "Note" );
     this.setInputsInline( true );
     this.setPreviousStatement( true, "null" );
@@ -545,19 +568,19 @@ Blockly.Blocks['0_2_Sons_JoueUneNoteBlanche_SELNote'] = {
       .appendField(new Blockly.FieldImage( "blockly4thymio/icones/icone-note-blanche.png", 20, 20, "blanche" ));
     this.appendDummyInput().appendField(
       new Blockly.FieldDropdown([ ["Do₃", "DO3"],
-                                              ["Ré₃",  "RE3"],
-                                              ["Mi₃",  "MI3"],
-                                              ["Fa₃",  "FA3"],
-                                              ["Sol₃",  "SOL3"],
-                                              ["La₃",  "LA3"],
-                                              ["Si₃",  "SI3"],
-                                              ["Do₄",  "DO4"],
-                                              ["Ré₄",  "RE4"],
-                                              ["Mi₄",  "MI4"],
-                                              ["Fa₄",  "FA4"],
-                                              ["Sol₄",  "SOL4"],
-                                              ["La₄",  "LA4"],
-                                              ["Si₄",  "SI4"],
+       	                                      ["Ré₃",  "RE3"],
+       	                                      ["Mi₃",  "MI3"],
+       	                                      ["Fa₃",  "FA3"],
+       	                                      ["Sol₃",  "SOL3"],
+       	                                      ["La₃",  "LA3"],
+       	                                      ["Si₃",  "SI3"],
+       	                                      ["Do₄",  "DO4"],
+       	                                      ["Ré₄",  "RE4"],
+       	                                      ["Mi₄",  "MI4"],
+       	                                      ["Fa₄",  "FA4"],
+       	                                      ["Sol₄",  "SOL4"],
+       	                                      ["La₄",  "LA4"],
+       	                                      ["Si₄",  "SI4"],
                                                ]), "Note" );
     this.setInputsInline( true );
     this.setPreviousStatement( true, "null" );
@@ -572,15 +595,15 @@ Blockly.Blocks['0_4_Sons_JoueUnSonPersonnel_SELSon'] = {
     this.appendDummyInput().appendField( 'joue le son personnel n°' );
     this.appendDummyInput().appendField(
       new Blockly.FieldDropdown([ ["01", "SON_PERSONNEL_01"],
-                                           ["02", "SON_PERSONNEL_02"],
-                                           ["03", "SON_PERSONNEL_03"],
-                                           ["04", "SON_PERSONNEL_04"],
-                                           ["05", "SON_PERSONNEL_05"],
-                                           ["06", "SON_PERSONNEL_06"],
-                                           ["07", "SON_PERSONNEL_07"],
-                                           ["08", "SON_PERSONNEL_08"],
-                                           ["09", "SON_PERSONNEL_09"],
-                                           ["10", "SON_PERSONNEL_10"]
+       	                                   ["02", "SON_PERSONNEL_02"],
+       	                                   ["03", "SON_PERSONNEL_03"],
+       	                                   ["04", "SON_PERSONNEL_04"],
+       	                                   ["05", "SON_PERSONNEL_05"],
+       	                                   ["06", "SON_PERSONNEL_06"],
+       	                                   ["07", "SON_PERSONNEL_07"],
+       	                                   ["08", "SON_PERSONNEL_08"],
+       	                                   ["09", "SON_PERSONNEL_09"],
+       	                                   ["10", "SON_PERSONNEL_10"]
                                                ]), "Son" );
     this.setInputsInline( true );
     this.setPreviousStatement( true, "null" );
@@ -1145,5 +1168,5 @@ Blockly.Blocks['0_8_Variables'] = {
     this.setTooltip( '' ); 
     
   } 
-};
+}; 
 
