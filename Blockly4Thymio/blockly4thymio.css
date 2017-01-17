@@ -349,7 +349,7 @@ padding: 0 !important;
 }
 .blocklyWidgetDiv .goog-option-selected .goog-menuitem-checkbox,
 .blocklyWidgetDiv .goog-option-selected .goog-menuitem-icon {
-background: url(sprites.png) no-repeat -48px -16px !important;
+background: url(media/sprites.png) no-repeat -48px -16px !important;
 }
 .blocklyToolboxDiv {
 background-color: #ddd;
