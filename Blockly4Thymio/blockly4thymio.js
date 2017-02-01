@@ -1,4 +1,3 @@
-
 'use strict'; 
 
 goog.provide('Blockly.Blocks.thymio'); 
@@ -486,24 +485,6 @@ Blockly.Blocks['0_1b_Sons_JoueLaNote_SI_Pendant05Seconde'] = {
   } 
 }; 
 
-Blockly.Blocks['0_2_Sons_JoueUnSon_SELSon'] = { 
-  init: function() { 
-    this.setColour( '#a0d468' ); 
-    this.setTooltip( 'Joue un son' ); 
-    this.appendDummyInput().appendField( 'joue le son' );
-    this.appendDummyInput().appendField(
-      new Blockly.FieldDropdown([ ["bonjour !",                 "SON_BONJOUR"],
-       	                                   ["ho !",                         "SON_HO"],
-            			      	   ["quoi ?",                      "SON_QUOI"],
-                                               ["je suis pas content !",  "SON_JE_SUIS_PAS_CONTENT"],
-                                               ["sirène des pompiers",   "SON_SIRENE_DES_POMPIERS"]
-                                               ]), "Son" );
-    this.setInputsInline( true );
-    this.setPreviousStatement( true, "null" );
-    this.setNextStatement( true, "null" );
-  } 
-}; 
-
 Blockly.Blocks['0_2_Sons_JoueUneNoteCroche_SELNote'] = { 
   init: function() { 
     this.setColour( '#a0d468' ); 
@@ -582,6 +563,110 @@ Blockly.Blocks['0_2_Sons_JoueUneNoteBlanche_SELNote'] = {
        	                                      ["La₄",  "LA4"],
        	                                      ["Si₄",  "SI4"],
                                                ]), "Note" );
+    this.setInputsInline( true );
+    this.setPreviousStatement( true, "null" );
+    this.setNextStatement( true, "null" );
+  } 
+}; 
+
+Blockly.Blocks['1_1_Sons_JoueUnInstrument_SELInstrument_SELNote_SELDurée'] = { 
+  init: function() { 
+    this.setColour( '#a0d468' ); 
+    this.setTooltip( 'Joue un instrument' ); 
+    this.appendDummyInput()
+      .appendField( 'instrument' )
+      .appendField( new Blockly.FieldDropdown( [  [ "Piano",  "PIANO" ],
+                                                                     [ "Banjo", "BANJO" ],
+                                                                     [ "Vibraphone", "VIBRAPHONE" ],
+                                                                     [ "Trompette", "TROMPETTE" ],
+                                                                     [ "Tambourin", "TAMBOURIN" ]
+                                                                  ] ), "Instrument" )
+      .appendField( 'note' )
+      .appendField( new Blockly.FieldDropdown( [  [ "Do₃",  "DO3" ],
+                                                                     [ "Do#₃", "DO3DIESE" ],
+                                                                     [ "Ré₃",  "RE3" ],
+                                                                     [ "Ré#₃", "RE3DIESE" ],
+                                                                     [ "Mi₃",  "MI3" ],
+                                                                     [ "Fa₃",  "FA3" ],
+                                                                     [ "Fa#₃", "FA3DIESE" ],
+                                                                     [ "Sol₃", "SOL3" ],
+                                                                     [ "Sol#₃","SOL3DIESE" ],
+                                                                     [ "La₃",  "LA3" ],
+                                                                     [ "La#₃", "LA3DIESE" ],
+                                                                     [ "Si₃",  "SI3" ],
+                                                                     [ "Do₄",  "DO4" ],
+                                                                     [ "Do#₄", "DO4DIESE" ],
+                                                                     [ "Ré₄",  "RE4" ],
+                                                                     [ "Ré#₄", "RE4DIESE" ],
+                                                                     [ "Mi₄",  "MI4" ],
+                                                                     [ "Fa₄",  "FA4" ],
+                                                                     [ "Fa#₄", "FA4DIESE" ],
+                                                                     [ "Sol₄", "SOL4" ],
+                                                                     [ "Sol#₄","SOL4DIESE" ],
+                                                                     [ "La₄",  "LA4" ],
+                                                                     [ "La#₄", "LA4DIESE" ],
+                                                                     [ "Si₄",  "SI4" ]
+                                                                     ] ), "Note" )
+      .appendField( 'durée' )
+      .appendField( new Blockly.FieldDropdown( [  [ {"src":"blockly4thymio/icones/icone-note-croche.png","width":15,"height":15,"alt":"croche"}, "CROCHE" ],
+                                                                     [ {"src":"blockly4thymio/icones/icone-note-noire.png","width":15,"height":15,"alt":"noire"}, "NOIRE" ],
+                                                                     [ {"src":"blockly4thymio/icones/icone-note-blanche.png","width":15,"height":15,"alt":"blanche"}, "BLANCHE" ]
+                                                                  ] ), "Durée" );
+    this.setInputsInline( true );
+    this.setPreviousStatement( true, "null" );
+    this.setNextStatement( true, "null" );
+  } 
+}; 
+
+Blockly.Blocks['1_1_Sons_JoueUnePercussion_SELNote_SELDurée'] = { 
+  init: function() { 
+    this.setColour( '#a0d468' ); 
+    this.setTooltip( 'Joue une percussion' ); 
+    this.appendDummyInput()
+      .appendField( 'percussion' )
+      .appendField( new Blockly.FieldDropdown( [  [ "Bongo 1",  "DO3" ],
+                                                                     [ "Bongo 2", "DO3DIESE" ],
+                                                                     [ "Bongo 3",  "RE3" ],
+                                                                     [ "Bongo 4", "RE3DIESE" ],
+                                                                     [ "Bongo 5",  "MI3" ],
+                                                                     [ "Derbouka 1",  "FA3" ],
+                                                                     [ "Derbouka 2", "FA3DIESE" ],
+                                                                     [ "Cloche 1", "SOL3" ],
+                                                                     [ "Cloche 2","SOL3DIESE" ],
+                                                                     [ "Cyballe","LA3" ],
+                                                                     [ "Sifflet 1",  "SI3" ],
+                                                                     [ "Sifflet 2",  "DO4" ],
+                                                                     [ "Sifflet 3",  "SI4" ],
+                                                                     [ "Güiro",  "RE4" ],
+                                                                     [ "Woodblock 1", "RE4DIESE" ],
+                                                                     [ "Wookblock 2",  "MI4" ],
+                                                                     [ "Woodblock 3",  "FA4" ],
+                                                                     [ "Cuica 1", "FA4DIESE" ],
+                                                                     [ "Cuica 2", "SOL4" ]
+                                                                     ] ), "Note" )
+      .appendField( 'durée' )
+      .appendField( new Blockly.FieldDropdown( [  [ {"src":"blockly4thymio/icones/icone-note-croche.png","width":15,"height":15,"alt":"croche"}, "CROCHE" ],
+                                                                     [ {"src":"blockly4thymio/icones/icone-note-noire.png","width":15,"height":15,"alt":"noire"}, "NOIRE" ],
+                                                                     [ {"src":"blockly4thymio/icones/icone-note-blanche.png","width":15,"height":15,"alt":"blanche"}, "BLANCHE" ]
+                                                                  ] ), "Durée" );
+    this.setInputsInline( true );
+    this.setPreviousStatement( true, "null" );
+    this.setNextStatement( true, "null" );
+  } 
+}; 
+
+Blockly.Blocks['0_2_Sons_JoueUnSon_SELSon'] = { 
+  init: function() { 
+    this.setColour( '#a0d468' ); 
+    this.setTooltip( 'Joue un son' ); 
+    this.appendDummyInput().appendField( 'joue le son' );
+    this.appendDummyInput().appendField(
+      new Blockly.FieldDropdown([ ["bonjour !",                 "SON_BONJOUR"],
+       	                                   ["ho !",                         "SON_HO"],
+            			      	   ["quoi ?",                      "SON_QUOI"],
+                                               ["je suis pas content !",  "SON_JE_SUIS_PAS_CONTENT"],
+                                               ["sirène des pompiers",   "SON_SIRENE_DES_POMPIERS"]
+                                               ]), "Son" );
     this.setInputsInline( true );
     this.setPreviousStatement( true, "null" );
     this.setNextStatement( true, "null" );
@@ -1169,4 +1254,3 @@ Blockly.Blocks['0_8_Variables'] = {
     
   } 
 }; 
-
