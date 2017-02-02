@@ -105,10 +105,10 @@ Blockly.Blocks['1_0_Evénement_QuandUnSonEstDétecté'] = {
 Blockly.Blocks['0_4_Paramètre_CalibreLesMoteurs_SAIValeur'] = { 
   init: function() { 
     this.setColour( '#ed5565' ); 
-    this.setTooltip( 'La valeur de calibration des moteurs permet d\'ajuster la distance d\'avance demandée avec la distance réellement observée. Cette instruction ne peux être utilisé qu\'une seule fois dans un programme.' ); 
+    this.setTooltip( 'La valeur de calibration des moteurs permet d\'ajuster la distance d\'avance demandée avec la distance réellement observée. Cette instruction ne peux être utilisé qu\'une seule fois dans un programme [valeur de 1 à 100].' ); 
     this.appendDummyInput()
         .appendField( "calibre les moteurs avec la valeur" )
-        .appendField( new Blockly.FieldTextInput("50"), "Valeur" );
+        .appendField( new Blockly.FieldNumber(50, 1, 100, 1), "Valeur");
     this.setInputsInline( true );
     this.setPreviousStatement( true );
     this.setNextStatement( true );
@@ -118,10 +118,10 @@ Blockly.Blocks['0_4_Paramètre_CalibreLesMoteurs_SAIValeur'] = {
 Blockly.Blocks['0_5_Paramètre_LAdresseDeLaTélécommandeEst_SAIAdresse'] = { 
   init: function() { 
     this.setColour( '#ed5565' ); 
-    this.setTooltip( 'L\'adresse de la télécommande IR, permet de défnir quel canal de la télécommande est utilisé.' ); 
+    this.setTooltip( 'L\'adresse de la télécommande IR, permet de défnir quel canal de la télécommande est utilisé [valeur de 0 à 255].' ); 
     this.appendDummyInput()
         .appendField( "définis l'adresse de la télécommande à" )
-        .appendField( new Blockly.FieldTextInput("0"), "Adresse" );
+        .appendField( new Blockly.FieldNumber(0, 0, 255, 1), "Adresse" );
     this.setInputsInline( true );
     this.setPreviousStatement( true );
     this.setNextStatement( true );
@@ -131,10 +131,10 @@ Blockly.Blocks['0_5_Paramètre_LAdresseDeLaTélécommandeEst_SAIAdresse'] = {
 Blockly.Blocks['0_9_Paramètre_InitialiseLeChronomètre_SAIValeur'] = { 
   init: function() { 
     this.setColour( '#ed5565' ); 
-    this.setTooltip( 'Initialise le chronomètre.' ); 
+    this.setTooltip( 'Initialise le chronomètre [valeur de 1s à 100s].' ); 
     this.appendDummyInput()
         .appendField( "initialise le chronomètre à " )
-        .appendField( new Blockly.FieldTextInput("1"), "Valeur" )
+        .appendField( new Blockly.FieldNumber(1, 1, 100, 1), "Valeur" )
         .appendField( "seconde(s)" );
     this.setInputsInline( true );
     this.setPreviousStatement( true );
@@ -191,14 +191,14 @@ Blockly.Blocks['0_1b_Mouvement_Avance_De5Centimètres'] = {
 Blockly.Blocks['0_1b_Mouvement_Avance_SELVitesse_SAIDistance'] = { 
   init: function() { 
     this.setColour( '#f59c00' ); 
-    this.setTooltip( 'Choisis la vitesse et renseigne le nombre de centimètre que Thymio doit parcourir.' ); 
+    this.setTooltip( 'Choisis la vitesse et renseigne le nombre de centimètre que Thymio doit parcourir [valeur de 1cm à 100cm].' ); 
     this.appendDummyInput()
       .appendField( 'avance' )
       .appendField(new Blockly.FieldDropdown(  [  [ "normalement", "NORMALEMENT" ],
                                                                      [ "rapidement", "RAPIDEMENT"],
                                                                      [ "lentement", "LENTEMENT"]  ]), "Vitesse" );
     this.appendDummyInput().appendField( "de" ); 
-    this.appendDummyInput().appendField( new Blockly.FieldTextInput("1"), "Distance" );
+    this.appendDummyInput().appendField( new Blockly.FieldNumber(1, 1, 100, 1), "Distance" );
     this.appendDummyInput().appendField( "cm" );        
     this.setInputsInline( true );
     this.setPreviousStatement( true, "null" );
@@ -220,14 +220,14 @@ Blockly.Blocks['0_1b_Mouvement_Recule'] = {
 Blockly.Blocks['0_1b_Mouvement_Recule_SELVitesse_SAIDistance'] = { 
   init: function() { 
     this.setColour( '#f59c00' ); 
-    this.setTooltip( 'Choisis la vitesse et renseigne le nombre de centimètre que Thymio doit parcourir en reculant.' ); 
+    this.setTooltip( 'Choisis la vitesse et renseigne le nombre de centimètre que Thymio doit parcourir en reculant [valeur de 1cm à 100cm].' ); 
     this.appendDummyInput()
       .appendField( 'recule' )
       .appendField(new Blockly.FieldDropdown(  [  [ "normalement", "NORMALEMENT" ],
                                                                      [ "rapidement", "RAPIDEMENT"],
                                                                      [ "lentement", "LENTEMENT"]  ]), "Vitesse" );
     this.appendDummyInput().appendField( "de" ); 
-    this.appendDummyInput().appendField( new Blockly.FieldTextInput("1"), "Distance" );
+    this.appendDummyInput().appendField( new Blockly.FieldNumber(1, 1, 100, 1), "Distance" );
     this.appendDummyInput().appendField( "cm" );        
     this.setInputsInline( true );
     this.setPreviousStatement( true, "null" );
@@ -269,9 +269,9 @@ Blockly.Blocks['0_5_Mouvement_TourneAGauche'] = {
 Blockly.Blocks['0_1b_Mouvement_TourneADroite_SAIAngle'] = { 
   init: function() { 
     this.setColour( '#f59c00' ); 
-    this.setTooltip( 'Thymio tourne vers la droite, avec l\'angle que tu as saisie.' ); 
+    this.setTooltip( 'Thymio tourne vers la droite de l\'angle saisie [valeur de 0° à 360°].' ); 
     this.appendDummyInput().appendField( 'tourne à droite ↻ de' );
-    this.appendDummyInput().appendField( new Blockly.FieldTextInput("90"), "Angle" );
+    this.appendDummyInput().appendField( new Blockly.FieldNumber(90, 0, 360, 1), "Angle" );
     this.appendDummyInput().appendField( 'degré' );
     this.setInputsInline(true);
     this.setPreviousStatement( true, "null" );
@@ -282,9 +282,9 @@ Blockly.Blocks['0_1b_Mouvement_TourneADroite_SAIAngle'] = {
 Blockly.Blocks['0_1b_Mouvement_TourneAGauche_SAIAngle'] = { 
   init: function() { 
     this.setColour( '#f59c00' ); 
-    this.setTooltip( 'Thymio tourne vers la gauche, avec l\'angle que tu as saisie.' ); 
+    this.setTooltip( 'Thymio tourne vers la gauche de l\'angle saisie [valeur de 0° à 360°].' ); 
     this.appendDummyInput().appendField( 'tourne à gauche ↺ de' );
-    this.appendDummyInput().appendField( new Blockly.FieldTextInput("90"), "Angle" );
+    this.appendDummyInput().appendField( new Blockly.FieldNumber(90, 0, 360, 1), "Angle" );
     this.appendDummyInput().appendField( 'degré' );
     this.setInputsInline(true);
     this.setPreviousStatement( true, "null" );
@@ -295,13 +295,13 @@ Blockly.Blocks['0_1b_Mouvement_TourneAGauche_SAIAngle'] = {
 Blockly.Blocks['0_2_Mouvement_Tourne_SELSens_SAIAngle'] = { 
   init: function() { 
     this.setColour( '#f59c00' ); 
-    this.setTooltip( 'Thymio tourne, avec l\'angle que tu as saisie.' ); 
+    this.setTooltip( 'Thymio tourne dans le sens sélectionné avec l\'angle saisie [valeur de 0° à 360°].' ); 
     this.appendDummyInput()
         .appendField( 'tourne à' )
         .appendField(  new Blockly.FieldDropdown(	[	[ "droite ↻", "A_DROITE" ],
             								[ "gauche ↺", "A_GAUCHE"]]), "Sens" );
     this.appendDummyInput().appendField( 'de' );
-    this.appendDummyInput().appendField( new Blockly.FieldTextInput("0"), "Angle" );
+    this.appendDummyInput().appendField( new Blockly.FieldNumber(0, 0, 360, 1), "Angle" );
     this.appendDummyInput().appendField( 'degré' );
     this.setInputsInline(true);
     this.setPreviousStatement( true, "null" );
@@ -315,9 +315,9 @@ Blockly.Blocks['0_6_Mouvement_VitesseDesRoues_SAIVitesseAGauche_SAIVitesseADroit
     this.setTooltip( 'Définis la vitesses des roues de Thymio. La vitesse est de -100% [en arrière] à 0% [à l\'arrêt], à 100% [en avant].' ); 
     this.appendDummyInput()
       .appendField( "vitesse des roues. à gauche" )
-      .appendField( new Blockly.FieldTextInput("100"), "VitesseAGauche" )
+      .appendField( new Blockly.FieldNumber(100, -100, 100, 1), "VitesseAGauche" )
       .appendField( "%. à droite" )
-      .appendField( new Blockly.FieldTextInput("100"), "VitesseADroite" )
+      .appendField( new Blockly.FieldNumber(100, -100, 100, 1), "VitesseADroite" )
       .appendField( "%." );
     this.setPreviousStatement( true, null );
     this.setNextStatement( true, null );
@@ -369,7 +369,7 @@ Blockly.Blocks['0_1b_Lumières_AllumeToutesLesLEDsPendant1Seconde_SELCouleur'] =
 Blockly.Blocks['0_2_Lumières_AllumeLesLEDs_SELLED_SELCouleur_SAIDurée'] = { 
   init: function() { 
     this.setColour( '#ffce54' ); 
-    this.setTooltip( 'Allume les lumières avec la couleur de ton choix, pendant un certain temps.' ); 
+    this.setTooltip( 'Allume les lumières avec la couleur de ton choix, pendant un temps &#40;valeur de 1s à 60s&#41;.' ); 
     this.appendDummyInput().appendField( "allume" );
     this.appendDummyInput().appendField( new Blockly.FieldDropdown( [   [ "toutes les lumières", "TOUTES_LES_LEDS" ],
                                                                                                        [ "lumières du dessus", "LED_DU_DESSUS" ],
@@ -378,7 +378,7 @@ Blockly.Blocks['0_2_Lumières_AllumeLesLEDs_SELLED_SELCouleur_SAIDurée'] = {
     this.appendDummyInput().appendField( "couleur" );
     this.appendDummyInput().appendField( new Blockly.FieldColour("#ff0000"), "Couleur" )
         .appendField( "pendant" )
-        .appendField( new Blockly.FieldTextInput("1"), "Durée" )
+        .appendField( new Blockly.FieldNumber(1, 1, 60, 1), "Durée" )
         .appendField( "seconde(s)" );
     this.setInputsInline( true );
     this.setPreviousStatement( true, "null" );
@@ -578,8 +578,7 @@ Blockly.Blocks['1_1_Sons_JoueUnInstrument_SELInstrument_SELNote_SELDurée'] = {
       .appendField( new Blockly.FieldDropdown( [  [ "Piano",  "PIANO" ],
                                                                      [ "Banjo", "BANJO" ],
                                                                      [ "Vibraphone", "VIBRAPHONE" ],
-                                                                     [ "Trompette", "TROMPETTE" ],
-                                                                     [ "Tambourin", "TAMBOURIN" ]
+                                                                     [ "Trompette", "TROMPETTE" ]
                                                                   ] ), "Instrument" )
       .appendField( 'note' )
       .appendField( new Blockly.FieldDropdown( [  [ "Do₃",  "DO3" ],
@@ -732,10 +731,10 @@ Blockly.Blocks['0_1b_Contrôles_Attends1Seconde'] = {
 Blockly.Blocks['0_2_Contrôles_Attends_SAIDurée'] = { 
   init: function() { 
     this.setColour( '#48cfad' ); 
-    this.setTooltip( 'Thymio attend pendant le nombre de seconde que tu as saisi.' ); 
+    this.setTooltip( 'Thymio attend pendant le nombre de seconde saisi [valeur de 1s à 60s].' ); 
     this.appendDummyInput()
         .appendField( "attends" )
-        .appendField( new Blockly.FieldTextInput("1"), "Durée" )
+        .appendField( new Blockly.FieldNumber(1, 1, 60, 1), "Durée" )
         .appendField( "seconde(s)" );
     this.setInputsInline( true );
     this.setPreviousStatement( true );
@@ -772,10 +771,10 @@ Blockly.Blocks['0_1b_Contrôles_RépèteToutLeTemps'] = {
 Blockly.Blocks['0_1b_Contrôles_Répète_SAIBoucle'] = { 
   init: function() { 
     this.setColour( '#48cfad' ); 
-    this.setTooltip( 'Répète une ou plusieurs actions, du nombre de boucles que tu as saisi.' ); 
+    this.setTooltip( 'Répète une ou plusieurs actions, du nombre de boucle saisi [valeur de 1 à 100].' ); 
     this.appendDummyInput()
         .appendField( 'faire' )
-        .appendField( new Blockly.FieldTextInput("3"), "NombreDeBoucle" )
+        .appendField( new Blockly.FieldNumber(3, 1, 100, 1), "NombreDeBoucle" )
         .appendField( "fois" );
     this.appendStatementInput( "BlocsInternes" )
     this.setPreviousStatement( true );
@@ -1167,9 +1166,9 @@ Blockly.Blocks['0_5_Valeur_Booléen_BoutonDeLaTélécommandeEst_SELTouche'] = {
 Blockly.Blocks['0_8_Valeur_Entier_SAIValeur'] = { 
   init: function() { 
     this.setColour( '#5d9cec' ); 
-    this.setTooltip( 'Nombre.' ); 
+    this.setTooltip( 'Nombre [valeur de -1000 à 1000].' ); 
     this.appendDummyInput()
-      .appendField( new Blockly.FieldTextInput( "1" ), "Valeur" );
+      .appendField( new Blockly.FieldNumber(1, -1000, 1000, 1), "Valeur" );
     this.setOutput(true, "Number");
   } 
 }; 
